@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode rollCounterClockwise;
     public KeyCode pitchClockwise;
     public KeyCode pitchCounterClockwise;
+    public KeyCode reduceCameraOffset;
+    public KeyCode increaseCameraOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +70,14 @@ public class PlayerController : MonoBehaviour
         {
             // pitch counterclockwise
             pawn.PitchCounterClockwise();
+        }
+        if (Input.GetKey(reduceCameraOffset))
+        {
+            pawn.DecreaseCameraOffset();
+        }
+        if (Input.GetKey(increaseCameraOffset))
+        {
+            pawn.IncreaseCameraOffset();
         }
     }
 }
